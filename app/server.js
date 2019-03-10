@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json())
 
-// require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
+require("./routing/htmlRoutes")(app);
+require("./routing/apiRoutes")(app);
 
 app.listen(PORT, function () {
     console.log("We are listening on PORT: " + PORT);
