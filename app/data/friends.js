@@ -1,16 +1,15 @@
-var friendArray = [
-    {
+var friendArray = [{
         friendName: 'Pickle Rick',
         friendPhoto: 'https://i.redd.it/dn1ag41tsucz.jpg',
         friendScore: [
             "5",
-            "2",
+            "1",
             "3",
             "1",
             "3",
             "4",
             "1",
-            "2",
+            "3",
             "5",
             "3"
         ]
@@ -25,10 +24,10 @@ var friendArray = [
             "1",
             "3",
             "4",
-            "1",
+            "5",
             "2",
             "5",
-            "3"
+            "1"
         ]
     },
     {
@@ -41,10 +40,10 @@ var friendArray = [
             "1",
             "3",
             "4",
-            "1",
+            "5",
             "2",
             "5",
-            "3"
+            "2"
         ]
     }
 ]
