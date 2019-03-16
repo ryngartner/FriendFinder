@@ -43,7 +43,7 @@
         </select>
 
         <h3><strong>Question 2</strong></h3>
-        <h4>Decisions that are made quickly are always wrong.</h4>
+        <h4>Bill Murray is a funny actor.</h4>
         <select class="chosen-select" id="q2">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -55,7 +55,7 @@
 
 
         <h3><strong>Question 3</strong></h3>
-        <h4>When people succeed, it's becuase of hard work. Luck has nothing to do with success</h4>
+        <h4>The Patriots are the best NFL team.</h4>
         <select class="chosen-select" id="q3">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -67,7 +67,7 @@
 
 
         <h3><strong>Question 4</strong></h3>
-        <h4>It's better for children to grow up in the country rather than the city.</h4>
+        <h4>Going to the movies alone is better than going with a group.</h4>
         <select class="chosen-select" id="q4">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -79,7 +79,7 @@
 
 
         <h3><strong>Question 5</strong></h3>
-        <h4>People can rarely upset you.</h4>
+        <h4>When the boys you used to hate, you date, I guess you best investigate, thats the facts of life.</h4>
         <select class="chosen-select" id="q5">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -91,7 +91,7 @@
 
 
         <h3><strong>Question 6</strong></h3>
-        <h4>The night is better than the day.</h4>
+        <h4>Would you consider being my neighbor?</h4>
         <select class="chosen-select" id="q6">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -103,7 +103,7 @@
 
 
         <h3><strong>Question 7</strong></h3>
-        <h4>It's ok to lie.</h4>
+        <h4>The family that I live for only breathes the air that smells of combat.</h4>
         <select class="chosen-select" id="q7">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -114,7 +114,7 @@
         </select>
 
         <h3><strong>Question 8</strong></h3>
-        <h4>Letters are better than emails.</h4>
+        <h4>King Flippy Nips is better than Mr. Poopy Butthole.</h4>
         <select class="chosen-select" id="q8">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -125,7 +125,7 @@
         </select>
 
         <h3><strong>Question 9</strong></h3>
-        <h4>Summer is the best season of the year.</h4>
+        <h4>We don't make mistakes, just happy little accidents.</h4>
         <select class="chosen-select" id="q9">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -136,7 +136,7 @@
         </select>
 
         <h3><strong>Question 10</strong></h3>
-        <h4>Sand is better than snow.</h4>
+        <h4>If you threw a party, invited everyone you knew, and the biggest gift was from me. Would you thank me for being a friend?</h4>
         <select class="chosen-select" id="q10">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="modal-body">
                         <h2 id="newFriend"></h2>
-                        <img id="newFriendPhoto" style="width:100%" src="" alt="">
+                        <img id="newFriendPhoto" style="width:100%" src="" alt="No Image">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -185,8 +185,12 @@
     </footer>
 
     <script type="text/javascript">
+    // Credit to Brandon Gorson for finding this line of code to remove the additional pair of empty brackets appended to the object name //
         jQuery.ajaxSettings.traditional = true;
+        // Activate submit button 
         $("#submit").on("click", function () {
+            event.preventDefault()
+        // User Input
             var newFriend = {
                 friendName: $("#name").val().trim(),
                 friendPhoto: $("#photo").val().trim(),
@@ -204,6 +208,7 @@
                 ]
             };
             console.log(newFriend);
+            // Add user input to 
             $.post("/api/friends", newFriend,
                 function (data) {
                     $("#newFriend").text(data.name);
